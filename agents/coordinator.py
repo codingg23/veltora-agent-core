@@ -278,3 +278,4 @@ class CoordinatorAgent(BaseAgent):
             f"Keep it concise - this is for an operator starting their shift."
         )
         return self.run(task)
+# coordinator now uses Opus, specialists use Sonnet
