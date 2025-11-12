@@ -133,3 +133,4 @@ class WorkingMemory:
                 "last_seen_s": round(age_s),
             }
         return status
+HEARTBEAT_TTL_S = 120  # agent considered dead after 2 min without heartbeat
