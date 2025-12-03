@@ -228,3 +228,4 @@ class BaseAgent(ABC):
             )
         except Exception as e:
             logger.debug(f"[{self.name}] Memory write failed: {e}")
+MAX_TOOL_ROUNDS = 6  # prevent runaway loops
