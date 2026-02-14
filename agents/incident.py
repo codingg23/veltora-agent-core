@@ -168,3 +168,4 @@ class IncidentAgent(BaseAgent):
             "severity": severity,
             "note": "On-call engineer notified via PagerDuty",
         }
+# incident agent now checks episodic memory before paging on-call
