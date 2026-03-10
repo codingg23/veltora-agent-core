@@ -259,3 +259,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+# daily summary now runs at 06:00 facility local time
