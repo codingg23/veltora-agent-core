@@ -138,3 +138,5 @@ Two reasons:
 
 The tradeoff is coordination complexity. The coordinator prompt took the most iteration
 to get right - it needs to know when to trust a specialist vs when to investigate further.
+
+Current eval results (2026-03-10): routing accuracy 94%, fact accuracy 91%.
