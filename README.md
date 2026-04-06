@@ -1,11 +1,11 @@
 # veltora-agent-core
 
-Autonomous multi-agent system for data centre operations.
+Autonomous multi agent system for data centre operations.
 
 The core idea: instead of a single LLM answering questions, run a network of specialised
 agents that monitor, reason, and act continuously. Each agent owns a narrow domain
 (thermal, power, capacity, incidents) and communicates through a shared memory layer.
-A coordinator agent routes tasks and synthesises cross-domain decisions.
+A coordinator agent routes tasks and synthesises cross domain decisions.
 
 This is what runs behind the Veltora platform in production. The agent loop runs 24/7,
 not just when an operator sends a query.
@@ -38,7 +38,7 @@ Each agent has:
 - Read/write access to shared memory
 - The ability to escalate to the coordinator or raise incidents
 
-The coordinator sees the full picture and makes cross-domain decisions - e.g. "thermal
+The coordinator sees the full picture and makes cross domain decisions - e.g. "thermal
 anomaly in ROW-07 + power spike in the same zone = likely GPU workload burst, check
 capacity plan before raising a cooling alarm."
 
@@ -50,12 +50,12 @@ capacity plan before raising a cooling alarm."
 | `PowerAgent` | PUE, PDU loads, UPS headroom | query_power, forecast_peak, check_ups_margin |
 | `CapacityAgent` | Rack space, power budget, provisioning | get_capacity_map, estimate_new_load_impact |
 | `IncidentAgent` | Alert triage, escalation, runbooks | get_open_incidents, search_runbooks, page_oncall |
-| `CoordinatorAgent` | Cross-domain reasoning, final decisions | all of the above, plus delegate_to_agent |
+| `CoordinatorAgent` | Cross domain reasoning, final decisions | all of the above, plus delegate_to_agent |
 
 ## Memory
 
 Two memory layers:
-- **Working memory** (Redis): short-lived context, agent state, in-flight tasks
+- **Working memory** (Redis): short-lived context, agent state, in flight tasks
 - **Episodic memory** (pgvector): past incidents + resolutions, indexed for semantic search
 
 When an agent sees a new anomaly, it first searches episodic memory for similar past
@@ -127,7 +127,7 @@ evals/           - evaluation harness + labelled test cases
 tests/           - unit + integration tests
 ```
 
-## Why multi-agent instead of one big agent?
+## Why multi agent instead of one big agent?
 
 Two reasons:
 1. **Context window**: a single agent trying to monitor thermal, power, capacity, and
